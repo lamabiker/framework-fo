@@ -1,0 +1,4 @@
+<!-- Home -->
+
+<?php getBlock('carousel'); ?>
+
