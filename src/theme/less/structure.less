@@ -2,15 +2,12 @@
 html { height:100%; background:white; }
 body {
   font-family: @main-font;
-  color:#333;
   font-stretch: normal;
-  //max-width:1600px;
-  margin:0 auto;
-  &.active-menu { overflow-y:hidden }
-  &.page-fixed { min-width:@screen-md }
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
-h1, h2, h3, h4, h5, h6 { color:#333333; }
-img {max-width: 100%; } 
+h1, h2, h3, h4, h5, h6 { color:#333; }
+img { max-width: 100%; } 
 a {
   color:@blue;
   &.page-link { color:@blue; text-decoration:underline; }
@@ -22,7 +19,7 @@ a {
     &:after { content:"\00BB" /* » */; display:inline-block; padding-left:5px; }
   }
   &.fat-arrow-link {
-    display:block; padding:25px 35px; background:@text-dark-grey; color:white; font-size:18px; .clearfix();
+    display:block; padding:25px 35px; background:@text-color; color:white; font-size:18px; .clearfix();
     span { display:inline-block; vertical-align:middle; }
     &:after { .fa(); content:"\f105"; font-size:50px; line-height:.8; display:inline-block; float:right; }
     .xs({
@@ -59,32 +56,37 @@ p {
 label { .user-select(none); cursor:pointer; }
 .form-control {
   height:@input-height;
-  background:@input-grey;
-  border:0;
+  background:@input-color;
   box-shadow:none;
   font-size:16px;
+  &:focus {
+    box-shadow:none;
+    border-color: @main-color;
+  }
+  &::-webkit-input-placeholder {
+    // color: #eee;
+  }
 }
 .input-group-addon {
-  background:@input-dark-grey; color:white; border:0; width:40px; padding:0;
+  background:@input-color; color:white; border:0; width:40px; padding:0;
   button { background:none; border:none; width:40px; height:@input-height; line-height:42px; padding:0; font-weight:bold; font-size:16px; }
   .blue & { background:@blue }
 }
-.placeholder(inherit, inherit);
-.form-control { .placeholder(@dark-grey, normal); }
+
 .datetime {
   position:relative;
-  &:after { .custom-font(); content:"w"; position:absolute; color:@orange; right:15px; top:11px; font-size:27px; }
+  &:after { .custom-font(); content:"w"; position:absolute; color:@main-color; right:15px; top:11px; font-size:27px; }
 }
 .bootstrap-datetimepicker-widget {
   width:100%;
   .table-condensed { width:100%; }
-  .prev, .next { color:@orange; }
+  .prev, .next { color:@main-color; }
   .picker-switch { text-align:center; text-transform:capitalize }
-  .dow { text-align:center; font-weight:400; border-bottom:1px solid @orange; }
+  .dow { text-align:center; font-weight:400; border-bottom:1px solid @main-color; }
   td {
     text-align:center; .transition-duration(.1s);
     &.today { background:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAMklEQVQYV2NkwAM+9DD8Z8QlD5IEyWFVAJPEqgBZEkMBuiSKAmyScAW4JMEK8EmCFAAAQx4T4VdjOZwAAAAASUVORK5CYII=') right bottom no-repeat; }
-    &.active { background-color:@orange !important; color:white }
+    &.active { background-color:@main-color !important; color:white }
     &:hover { background-color:@grey; cursor:pointer; }
   }
 }
@@ -97,13 +99,13 @@ label { .user-select(none); cursor:pointer; }
     }
   }
   + .bootstrap-select {
-    background:@input-grey;
+    background:@input-color;
     .border-radius();
     color:black;
     .btn {
-      background:none; color:@dark-grey !important; border:0; text-shadow:none; height:@input-height; box-shadow:none;
+      background:none; color:@input-color !important; border:0; text-shadow:none; height:@input-height; box-shadow:none;
       .caret {
-        display:inline-block; top:0; right:0; background:@input-dark-grey; width:40px; height:@input-height; border:none; margin:0; border-radius:0 3px 3px 0;
+        display:inline-block; top:0; right:0; background:@input-color; width:40px; height:@input-height; border:none; margin:0; border-radius:0 3px 3px 0;
         &:before {
           content:"\f107";
           .fa();
@@ -114,7 +116,7 @@ label { .user-select(none); cursor:pointer; }
       }
     }
     .dropdown-menu {
-      margin-top:-2px; border-radius:0; background:@input-grey; padding:0;
+      margin-top:-2px; border-radius:0; background:@input-color; padding:0;
       li {
         font-size:16px;
         a {
@@ -267,10 +269,6 @@ label { .user-select(none); cursor:pointer; }
 .col-sm-5.pc45 { width:45% }
 .no-mobile-bottom-padding { .xs({ padding-bottom:0 !important; }); }
 .no-mobile-top-padding { .xs({ padding-top:0 !important; }); }
-.teal-block {
-  background:#f5f5f5; color:#333; padding:15px;
-  a { color:#333 !important; }
-}
 
 // Small logo
 .small-logo {
