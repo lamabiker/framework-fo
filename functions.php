@@ -16,7 +16,7 @@ function urlize($url) {
 function createNewPage($name) {
   $clean_name = urlize($name);
 
-  $fp = fopen('templates/'.$clean_name.'.php','w');
+  $fp = fopen('templates/pages/'.$clean_name.'.php','w');
   fwrite($fp, "<!-- ".$name." -->\n");
   fclose($fp);
 
