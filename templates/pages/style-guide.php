@@ -58,16 +58,14 @@
 			<div class="style-guide-row">
 				<div class="col-sm-6">
 					<h3>Select</h3>
-					<div class="select">
-
+					<div class="form-select">
+						<select name="" class="selectpicker">
+							<option value="">Text</option>
+							<option value="">Text</option>
+							<option value="">Text</option>
+							<option value="">Text</option>
+						</select>
 					</div>
-					<select name="" class="selectpicker">
-						<option value="">Text</option>
-						<option value="">Text</option>
-						<option value="">Text</option>
-						<option value="">Text</option>
-
-					</select>
 				</div>
 				<div class="col-sm-6">
 					<h3>Formulaire</h3>

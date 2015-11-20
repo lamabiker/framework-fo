@@ -21,6 +21,28 @@
 	}
 }
 
+.form-checkbox {
+	input[type="checkbox"] {
+		display: none;
+		+ label  {
+			font-weight: 500;
+			.icon {
+				display: inline-block; width: 15px; height: 15px; margin: 0px 5px 0 0; vertical-align: middle; cursor: pointer; background-color: #FFF; border: 1px solid #e7e8e8; position: relative;
+				-webkit-transition: background-color 0.4s linear;
+				-o-transition: background-color 0.4s linear;
+				-moz-transition: background-color 0.4s linear;
+				transition: background-color 0.4s linear;
+				&:before { transition: 0.3s; font: normal normal normal 14px/1 FontAwesome; opacity: 0; content: "\f00c"; display: block; color: @main-color; position: absolute; top: 50%; transform: translateY(-50%);  }
+			}
+		}
+		&:checked {
+			+ label .icon:before {
+				opacity: 1;
+			}
+		}
+	}
+}
+
 // Form Group
 .form-group {
 	margin-bottom: 20px;
