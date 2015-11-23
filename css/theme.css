@@ -768,6 +768,9 @@ label {
 .form-checkbox input[type="checkbox"]:checked + label .icon:before {
   opacity: 1;
 }
+.checkbox label {
+  padding-left: 0;
+}
 .form-select {
   position: relative;
 }
