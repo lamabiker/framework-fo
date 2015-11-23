@@ -144,6 +144,10 @@ label {
   background: white;
   box-shadow: none;
   font-size: 16px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
 }
 .form-control:focus {
   box-shadow: none;
@@ -728,6 +732,73 @@ label {
 }
 .form-radio input[type="radio"]:checked + label .icon:before {
   opacity: 1;
+}
+.form-checkbox input[type="checkbox"] {
+  display: none;
+}
+.form-checkbox input[type="checkbox"] + label {
+  font-weight: 500;
+}
+.form-checkbox input[type="checkbox"] + label .icon {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin: 0px 5px 0 0;
+  vertical-align: middle;
+  cursor: pointer;
+  background-color: #FFF;
+  border: 1px solid #e7e8e8;
+  position: relative;
+  -webkit-transition: background-color 0.4s linear;
+  -o-transition: background-color 0.4s linear;
+  -moz-transition: background-color 0.4s linear;
+  transition: background-color 0.4s linear;
+}
+.form-checkbox input[type="checkbox"] + label .icon:before {
+  transition: 0.3s;
+  font: normal normal normal 14px/1 FontAwesome;
+  opacity: 0;
+  content: "\f00c";
+  display: block;
+  color: #2d2d2d;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.form-checkbox input[type="checkbox"]:checked + label .icon:before {
+  opacity: 1;
+}
+.checkbox label {
+  padding-left: 0;
+}
+.form-select {
+  position: relative;
+}
+.form-select select {
+  padding: 5px 20px  5px 5px ;
+  height: 35px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  width: 100%;
+  border-radius: 0;
+  border: 1px solid #ccc;
+}
+.form-select select:focus {
+  box-shadow: none;
+  border-color: #2d2d2d;
+  outline: none;
+}
+.form-select:after {
+  pointer-events: none;
+  font: normal normal normal 14px/1 FontAwesome;
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #2d2d2d;
+  content: "\f0d7";
 }
 .form-group {
   margin-bottom: 20px;
