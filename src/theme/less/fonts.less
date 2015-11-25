@@ -1,17 +1,17 @@
 // Fonts
 
-@main-font-name: 'Raleway'; // GOOGLE FONT
-//@main-font-path: '../fonts/main-font/';
+@main-font-name:'Raleway'; // GOOGLE FONT
+//@main-font-path:'../fonts/main-font/';
 
-//@italic-font: 'aleo';
-//@italic-font-path: '../fonts/aleo/';
+//@italic-font:'aleo';
+//@italic-font-path:'../fonts/aleo/';
 
-@icon-font-name: 'viva';
-@icon-font-path: '../fonts/';
+@icon-font-name:'viva';
+@icon-font-path:'../fonts/';
 
 
 // Main font
-.font-face(@path, @name, @ext, @weight: normal, @style: normal) {
+.font-face(@path, @name, @ext, @weight:normal, @style:normal) {
   @font-face {
     font-family:@name;
     src:url('@{path}@{name}@{ext}.eot');
@@ -27,12 +27,12 @@
 
 // FontAwesome
 .fa() {
-  display: inline-block;
-  font: normal normal normal 14px/1 FontAwesome;
-  font-size: inherit;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  display:inline-block;
+  font:normal normal normal 14px/1 FontAwesome;
+  font-size:inherit;
+  text-rendering:auto;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
 }
 
 // Custom font
@@ -40,20 +40,20 @@
 
 
 .custom-font() {
-  font-family: @icon-font-name !important;
-  font-style: normal !important;
-  font-weight: normal !important;
-  font-variant: normal !important;
-  text-transform: none !important;
-  speak: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family:@icon-font-name !important;
+  font-style:normal !important;
+  font-weight:normal !important;
+  font-variant:normal !important;
+  text-transform:none !important;
+  speak:none;
+  line-height:1;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
 }
 
 [data-icon]:before {
   .custom-font();
-  content: attr(data-icon);
+  content:attr(data-icon);
 }
 
 [class^="icon-"]:before,
@@ -62,9 +62,9 @@
 }
 
 // .icon-annonces:before {
-//   content: "\e000";
+//   content:"\e000";
 // }
 // .icon-brochure:before {
-//   content: "\e001";
+//   content:"\e001";
 // }
 

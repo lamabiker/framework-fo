@@ -1,46 +1,125 @@
+label { .user-select(none); cursor:pointer; }
+.form-control {
+  height:@input-height;
+  background:@input-color;
+  box-shadow:none;
+  font-size:16px;
+  &:focus {
+    box-shadow:none;
+    border-color:@main-color;
+  }
+  &::-webkit-input-placeholder {
+    // color:#eee;
+  }
+}
+.input-group-addon {
+  background:@input-color; color:white; border:0; width:40px; padding:0;
+  button { background:none; border:none; width:40px; height:@input-height; line-height:42px; padding:0; font-weight:bold; font-size:16px; }
+  .blue & { background:@blue }
+}
+
 // Input Radio
 .form-radio {
-	input[type="radio"] {
-		display: none;
-		+ label  {
-			font-weight: 500;
-			.icon {
-				display: inline-block; width: 15px; height: 15px; margin: 0px 5px 0 0; vertical-align: middle; cursor: pointer; -moz-border-radius: 50%; border-radius: 50%; background-color: #FFF; border: 1px solid #e7e8e8; position: relative;
-				-webkit-transition: background-color 0.4s linear;
-				-o-transition: background-color 0.4s linear;
-				-moz-transition: background-color 0.4s linear;
-				transition: background-color 0.4s linear;
-				&:before { transition: 0.3s; content: ''; display: block; width: 7px; height: 7px; background-color: @main-color; border-radius: 50%; opacity: 0; position: absolute; top: 50%; transform: translateY(-50%); right: 3px; }
-			}
-		}
-		&:checked {
-			+ label .icon:before {
-				opacity: 1;
-			}
-		}
-	}
+  input[type="radio"] {
+    display:none;
+    + label  {
+      font-weight:500;
+      .icon {
+        display:inline-block; width:15px; height:15px; margin:0px 5px 0 0; vertical-align:middle; cursor:pointer; -moz-border-radius:50%; border-radius:50%; background-color:#FFF; border:1px solid #e7e8e8; position:relative;
+        -webkit-transition:background-color 0.4s linear;
+        -o-transition:background-color 0.4s linear;
+        -moz-transition:background-color 0.4s linear;
+        transition:background-color 0.4s linear;
+        &:before { transition:0.3s; content:''; display:block; width:7px; height:7px; background-color:@main-color; border-radius:50%; opacity:0; position:absolute; top:50%; transform:translateY(-50%); right:3px; }
+      }
+    }
+    &:checked {
+      + label .icon:before {
+        opacity:1;
+      }
+    }
+  }
 }
 
 // Form Group
 .form-group {
-	margin-bottom: 20px;
-	.xs({margin-bottom: 15px;});
-	color: #000;
-	&:last-child{
-		margin-bottom: 0;
-	}
-	.input-form{
-		padding-left: 0;
-		.xs({padding-left:15px;});
-	}
-	.error{
-		input, textarea{
-			background:white ;
-			border: 1px solid #e98f8f; 
-			box-shadow: inherit;
-			color: #000;
-		}
-	}
+  margin-bottom:20px;
+  .xs({ margin-bottom:15px; });
+  color:#000;
+  &:last-child{
+    margin-bottom:0;
+  }
+  .input-form{
+    padding-left:0;
+    .xs({padding-left:15px; });
+  }
+  .error{
+    input, textarea{
+      background:white ;
+      border:1px solid #e98f8f;
+      box-shadow:inherit;
+      color:#000;
+    }
+  }
 }
 
+.datetime {
+  position:relative;
+  &:after { .custom-font(); content:"w"; position:absolute; color:@main-color; right:15px; top:11px; font-size:27px; }
+}
+.bootstrap-datetimepicker-widget {
+  width:100%;
+  .table-condensed { width:100%; }
+  .prev, .next { color:@main-color; }
+  .picker-switch { text-align:center; text-transform:capitalize }
+  .dow { text-align:center; font-weight:400; border-bottom:1px solid @main-color; }
+  td {
+    text-align:center; .transition-duration(.1s);
+    &.today { background:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAMklEQVQYV2NkwAM+9DD8Z8QlD5IEyWFVAJPEqgBZEkMBuiSKAmyScAW4JMEK8EmCFAAAQx4T4VdjOZwAAAAASUVORK5CYII=') right bottom no-repeat; }
+    &.active { background-color:@main-color !important; color:white }
+    &:hover { background-color:@grey; cursor:pointer; }
+  }
+}
 
+// Custom Select
+.selectpicker {
+  &.blue {
+    + .bootstrap-select {
+      .btn .caret { background:@blue; }
+    }
+  }
+  + .bootstrap-select {
+    background:@input-color;
+    .border-radius();
+    color:black;
+    .btn {
+      background:none; color:@input-color !important; border:0; text-shadow:none; height:@input-height; box-shadow:none;
+      .caret {
+        display:inline-block; top:0; right:0; background:@input-color; width:40px; height:@input-height; border:none; margin:0; border-radius:0 3px 3px 0;
+        &:before {
+          content:"\f107";
+          .fa();
+          color:white;
+          font-size:35px;
+          line-height:@input-height;
+        }
+      }
+    }
+    .dropdown-menu {
+      margin-top:-2px; border-radius:0; background:@input-color; padding:0;
+      li {
+        font-size:16px;
+        a {
+          padding-top:6px; padding-bottom:6px;
+          &:focus { outline:none }
+        }
+        &.selected {
+          a { background:#2b2b2b; color:white; }
+        }
+      }
+    }
+  }
+}
+.select-picker(@rules) {
+  .bootstrap-select { @rules(); }
+}

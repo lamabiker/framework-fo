@@ -1,16 +1,9 @@
 // Custom Mixins
-
 .overflow-ellipsis() {
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+  overflow:hidden;
 }
-
-.right-spacing-lg(@amount) {
-  padding-right: @amount;
-  .xs({ padding-right:inherit });
-}
-
 .columns(@amount) {
   -webkit-column-count:@amount; /* Chrome, Safari, Opera */
   -moz-column-count:@amount; /* Firefox */
@@ -21,70 +14,104 @@
     column-count:auto;
   });
 }
+.clear-appearance() {
+  -webkit-appearance:none;
+  -moz-appearance:   none;
+  -ms-appearance:    none;
+  appearance:        none;
+}
 
+// Flex rules
 .flex() {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
+  display:-webkit-box;
+  display:-moz-box;
+  display:-ms-flexbox;
+  display:-webkit-flex;
+  display:flex;
   .xs({
-//    flex-direction:column;
+    //    flex-direction:column;
     display:block;
-    > * { display:block; width:100%; }
+  > * { display:block; width:100%; }
   });
+}
+.flex(@amount) {
+  -webkit-box-flex:@amount;
+  -webkit-flex:@amount;
+  -moz-box-flex:@amount;
+  // -ms-flex:@amount;
+  // flex:@amount;
+}
+.flex-vertical() {
+  -webkit-box-orient:vertical;
+  -webkit-box-direction:normal;
+  -webkit-flex-direction:column;
+  -moz-box-orient:vertical;
+  -moz-box-direction:normal;
+  -ms-flex-direction:column;
+  flex-direction:column;
+}
+.flex-wrap(@value:wrap) {
+  flex-wrap:@value;
+  -ms-flex-wrap:@value;
+  -webkit-flex-wrap:@value;
 }
 
 // Filterz
-.desaturate(@value: 0.5) {
-  @pct: percentage(@value);
-  @svgvalue: (1 - @value);
-  filter: none;
-  filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix in=\"SourceGraphic\" type=\'saturate\' values=\'@{svgvalue}\'/></filter></svg>#grayscale");
-  -webkit-filter: grayscale(@pct);
-  -moz-filter:    grayscale(@pct);
-  -ms-filter:     grayscale(@pct);
-  -o-filter:      grayscale(@pct);
+.desaturate(@value:0.5) {
+  @pct:percentage(@value);
+  @svgvalue:(1 - @value);
+  filter:none;
+  filter:url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix in=\"SourceGraphic\" type=\'saturate\' values=\'@{svgvalue}\'/></filter></svg>#grayscale");
+  -webkit-filter:grayscale(@pct);
+  -moz-filter:   grayscale(@pct);
+  -ms-filter:    grayscale(@pct);
+  -o-filter:     grayscale(@pct);
 }
-.brightness(@value: 1) {
-  -webkit-filter: brightness(@value);
-  -moz-filter: brightness(@value);
-  -ms-filter: brightness(@value);
-  filter: brightness(@value);
+.brightness(@value:1) {
+  -webkit-filter:brightness(@value);
+  -moz-filter:brightness(@value);
+  -ms-filter:brightness(@value);
+  filter:brightness(@value);
 }
 
 // Svg pixel
 .background-line(@first-color) {
-  @first: escape('@{first-color}');
-  @svg: "<svg xmlns='http://www.w3.org/2000/svg' width='1px' height='1px'><rect x='0' y='0' width='1' height='1' fill='@{first}' /></svg>";
+  @first:escape('@{first-color}');
+  @svg:"<svg xmlns='http://www.w3.org/2000/svg' width='1px' height='1px'><rect x='0' y='0' width='1' height='1' fill='@{first}' /></svg>";
   background-image:url("data:image/svg+xml;utf8,@{svg}");
 }
 
 // Svg double line
 .background-line(@first-color, @second-color) {
-  @first: escape('@{first-color}');
-  @second: escape('@{second-color}');
-  @svg: "<svg xmlns='http://www.w3.org/2000/svg' width='1440px' height='1px'><rect x='0' y='0' width='820' height='1' fill='@{first}' /><rect x='820' y='0' width='620' height='1' fill='@{second}' /></svg>";
+  @first:escape('@{first-color}');
+  @second:escape('@{second-color}');
+  @svg:"<svg xmlns='http://www.w3.org/2000/svg' width='1440px' height='1px'><rect x='0' y='0' width='820' height='1' fill='@{first}' /><rect x='820' y='0' width='620' height='1' fill='@{second}' /></svg>";
   background-image:url("data:image/svg+xml;utf8,@{svg}");
 }
 
 // Gradients
 .blue-to-blue-gradient(@color1, @color2) {
-  background: @color1;
-  background: -moz-linear-gradient(left,  @color1 0%, @color1 57%, @color2 57%, @color2 100%);
-  background: -webkit-gradient(linear, left top, right top, color-stop(0%,@color1), color-stop(57%,@color1), color-stop(57%,@color2), color-stop(100%,@color2));
-  background: -webkit-linear-gradient(left,  @color1 0%,@color1 57%,@color2 57%,@color2 100%);
-  background: -o-linear-gradient(left,  @color1 0%,@color1 57%,@color2 57%,@color2 100%);
-  background: -ms-linear-gradient(left,  @color1 0%,@color1 57%,@color2 57%,@color2 100%);
-  background: linear-gradient(to right,  @color1 0%,@color1 57%,@color2 57%,@color2 100%);
+  background:@color1;
+  background:-moz-linear-gradient(left,  @color1 0%, @color1 57%, @color2 57%, @color2 100%);
+  background:-webkit-gradient(linear, left top, right top, color-stop(0%,@color1), color-stop(57%,@color1), color-stop(57%,@color2), color-stop(100%,@color2));
+  background:-webkit-linear-gradient(left,  @color1 0%,@color1 57%,@color2 57%,@color2 100%);
+  background:-o-linear-gradient(left,  @color1 0%,@color1 57%,@color2 57%,@color2 100%);
+  background:-ms-linear-gradient(left,  @color1 0%,@color1 57%,@color2 57%,@color2 100%);
+  background:linear-gradient(to right,  @color1 0%,@color1 57%,@color2 57%,@color2 100%);
+}
+.color-fade-gradient(@color, @percentage:50%) {
+  background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,fade(@color, 0)), color-stop(@percentage,fade(@color, 100%)), color-stop(100%,fade(@color, 100%)));
+  background:-webkit-linear-gradient(top,  fade(@color, 0) 0%,fade(@color, 100%) @percentage,fade(@color, 100%) 100%);
+  background:-o-linear-gradient(top,  fade(@color, 0) 0%,fade(@color, 100%) @percentage,fade(@color, 100%) 100%);
+  background:-ms-linear-gradient(top,  fade(@color, 0) 0%,fade(@color, 100%) @percentage,fade(@color, 100%) 100%);
+  background:linear-gradient(to bottom,  fade(@color, 0) 0%,fade(@color, 100%) @percentage,fade(@color, 100%) 100%);
 }
 
-.color-fade-gradient(@color, @percentage: 50%) {
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,fade(@color, 0)), color-stop(@percentage,fade(@color, 100%)), color-stop(100%,fade(@color, 100%)));
-  background: -webkit-linear-gradient(top,  fade(@color, 0) 0%,fade(@color, 100%) @percentage,fade(@color, 100%) 100%);
-  background: -o-linear-gradient(top,  fade(@color, 0) 0%,fade(@color, 100%) @percentage,fade(@color, 100%) 100%);
-  background: -ms-linear-gradient(top,  fade(@color, 0) 0%,fade(@color, 100%) @percentage,fade(@color, 100%) 100%);
-  background: linear-gradient(to bottom,  fade(@color, 0) 0%,fade(@color, 100%) @percentage,fade(@color, 100%) 100%);
+// Clip-path
+.clip-path(@clip-path) {
+  // For custom polygons : http://bennettfeely.com/clippy/
+  -webkit-clip-path:@clip-path;
+  clip-path:@clip-path;
 }
 
 // Social links
@@ -95,14 +122,13 @@
 }
 
 // Media queries
-
 .mqmx(@max-width; @rules) {
-  @media only screen and (max-width: @max-width) {
+  @media only screen and (max-width:@max-width) {
     @rules();
   }
 }
 .mqmn(@min-width; @rules) {
-  @media only screen and (min-width: @min-width) {
+  @media only screen and (min-width:@min-width) {
     @rules();
   }
 }
@@ -130,7 +156,6 @@
 }
 
 // Transforms
-
 .transform(@prop) {
   -webkit-transform:@prop;
   -moz-transform:@prop;
