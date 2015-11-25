@@ -58,17 +58,17 @@
 			<div class="style-guide-row">
 				<div class="col-sm-6">
 					<h3>Select</h3>
-					<div class="select">
-
+					<div class="form-select">
+						<select name="" class="selectpicker">
+							<option value="">Text</option>
+							<option value="">Text</option>
+							<option value="">Text</option>
+							<option value="">Text</option>
+						</select>
 					</div>
-					<select name="" class="selectpicker">
-						<option value="">Text</option>
-						<option value="">Text</option>
-						<option value="">Text</option>
-						<option value="">Text</option>
-
-					</select>
 				</div>
+			</div>
+			<div class="style-guide-row">
 				<div class="col-sm-6">
 					<h3>Formulaire</h3>
 					<form>
@@ -86,9 +86,10 @@
 							<p class="help-block">Example block-level help text here.</p>
 						</div>
 						<div class="checkbox">
-							<label>
-								<input type="checkbox"> Check me out
-							</label>
+							<div class="form-checkbox">
+								<input type="checkbox" name="" value="" placeholder="" id="checkbox2">
+								<label for="checkbox2"><span class="icon"></span> Check me out </label>
+							</div>
 						</div>
 						<button type="submit" class="btn btn-default">Submit</button>
 					</form>
