@@ -1,9 +1,20 @@
 {
-  "name": "Qualitel",
+  "name": "framework-fo",
+  "description": "A light framework aimed for use to Front-End Developers",
+  "author": "Liam Baker <liam@lamabiker.com>",
+  "contributors": [{
+    "name": "JB Pham",
+    "email": "jbpham@kernix.com"
+  }],
   "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/liam-kernix/framework-fo"
+  },
   "devDependencies": {
-    "grunt": "~0.4.5",
+    "grunt": "^0.4.5",
     "grunt-contrib-less": "~1.0.0",
     "grunt-contrib-watch": "~0.6.1"
-  }
+  },
+  "license": "MIT"
 }
