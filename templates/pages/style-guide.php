@@ -95,6 +95,14 @@
 					</form>
 				</div>
 			</div>
+			<div class="style-guide-row">
+				<div class="col-sm-6">
+					<h3>Datepicker</h3>
+					<div class="datetime">
+						<input type="text"  class="form-control">
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
