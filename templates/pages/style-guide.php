@@ -67,6 +67,7 @@
 						</select>
 					</div>
 				</div>
+		
 			</div>
 			<div class="style-guide-row">
 				<div class="col-sm-6">
@@ -94,14 +95,73 @@
 						<button type="submit" class="btn btn-default">Submit</button>
 					</form>
 				</div>
-			</div>
-			<div class="style-guide-row">
-				<div class="col-sm-6">
+			<div class="col-sm-6">
 					<h3>Datepicker</h3>
 					<div class="datetime">
 						<input type="text"  class="form-control">
 					</div>
 				</div>
+			</div>
+			<div class="style-guide-row">
+			<div class="cms">
+			<div class="col-sm-6">
+				<h3>Titre</h3>
+				<h1>Titre h1</h1>
+				<h2>Titre h2</h2>
+				<h3>Titre h3</h3>
+				<h4>Titre h4</h4>
+				<h5>Titre h5</h5>
+				</div>
+						<div class="col-sm-6">
+					<h3>Paragraph</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas odio veniam exercitationem cumque inventore asperiores, eaque hic fugit iusto sit sed culpa, ullam pariatur ipsum, voluptate? Et quis dolorem, libero.</p>
+				</div>
+					<div class="col-sm-6">
+					<h3>Liste</h3>
+					<ul>
+					    <li>list
+							<ul>
+						    <li>list</li>
+						    <li>list</li>
+						    <li>list</li>
+						    <li>list</li>
+							</ul>
+					    </li>
+					    <li>list</li>
+					    <li>list</li>
+					    <li>list</li>
+					</ul>
+					<ol>
+					    <li>list
+							<ul>
+						    <li>list</li>
+						    <li>list</li>
+						    <li>list</li>
+						    <li>list</li>
+							</ul>
+					    </li>
+					    <li>list</li>
+					    <li>list</li>
+					    <li>list</li>
+					</ol>
+				</div>
+			</div>
+			</div>
+			<div class="style-guide-row">
+			<h3>Table</h3>
+			<table class="table">
+				<caption>table title and/or explanatory text</caption>
+				<thead>
+					<tr>
+						<th>header</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>data</td>
+					</tr>
+				</tbody>
+			</table>
 			</div>
 		</div>
 	</div>
