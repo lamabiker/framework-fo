@@ -79,7 +79,7 @@ label { .user-select(none); cursor:pointer; }
 
 .datetime {
   position:relative;
-  &:after { .custom-font(); content:"w"; position:absolute; color:@main-color; right:15px; top:11px; font-size:27px; }
+  &:after { .custom-font(); content:"w"; position:absolute; color:@main-color; right:15px; top:11px; font-size:27px; pointer-events: none; }
 }
 .bootstrap-datetimepicker-widget {
   width:100%;
